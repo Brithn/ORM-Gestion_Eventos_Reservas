@@ -38,5 +38,11 @@ npm run migration:run
 */ para deshacer las migraciones*/
 npx sequelize-cli db:migrate:undo:all
 
+Enlace de repositorio en github : 
+  - https://github.com/Brithn/ORM-Gestion_Eventos_Reservas.git
+Endpoints:
+  - http://localhost:3000/api/v1/reservas
+  - http://localhost:3000/api/v1/asistentes
+  - http://localhost:3000/api/v1/eventos
 
 

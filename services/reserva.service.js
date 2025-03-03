@@ -1,4 +1,3 @@
-const boom = require('boom');
 const { models } = require('../libs/sequelize');
 
 class ReservaService {
@@ -10,8 +9,8 @@ class ReservaService {
   async find() {
     const reservas = await models.Reserva.findAll({
       include: [
-        { model: models.Evento, as: 'evento' },
-        { model: models.Asistente, as: 'asistente' },
+        { model: models.Event, as: 'evento' },
+        { model: models.Assistant, as: 'asistente' },
       ],
     });
     return reservas;
@@ -20,8 +19,8 @@ class ReservaService {
   async findOne(id) {
     const reserva = await models.Reserva.findByPk(id, {
       include: [
-        { model: models.Evento, as: 'evento' },
-        { model: models.Asistente, as: 'asistente' },
+        { model: models.Event, as: 'evento' },
+        { model: models.Assistant, as: 'asistente' },
       ],
     });
     if (!reserva) {

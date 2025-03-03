@@ -8,13 +8,13 @@ const fechaReserva = Joi.date().iso().required();
 const createReservaSchema = Joi.object({
   eventoId: eventoId.required(),
   asistenteId : asistenteId.required(),
-  fechaReserva : fechaReserva.required(),
+  fecha_reserva : fechaReserva.required(),
 });
 
 const updateReservaSchema = Joi.object({
   eventoId : eventoId,
   asistenteId : asistenteId,
-  fechaReserva : fechaReserva,
+  fecha_reserva : fechaReserva,
 });
 
 const getReservaSchema = Joi.object({

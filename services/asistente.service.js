@@ -3,17 +3,17 @@ const { models } = require('../libs/sequelize');
 
 class AsistenteService {
   async create(data) {
-    const newAsistente = await models.Asistente.create(data);
+    const newAsistente = await models.Assistant.create(data);
     return newAsistente;
   }
 
   async find() {
-    const asistentes = await models.Asistente.findAll();
+    const asistentes = await models.Assistant.findAll();
     return asistentes;
   }
 
   async findOne(id) {
-    const asistente = await models.Asistente.findByPk(id);
+    const asistente = await models.Assistant.findByPk(id);
     if (!asistente) {
       throw boom.notFound('Asistente no encontrado');
     }

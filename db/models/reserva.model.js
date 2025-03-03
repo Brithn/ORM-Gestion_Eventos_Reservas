@@ -1,4 +1,5 @@
 const { Sequelize, Model, DataTypes } = require('sequelize');
+
 const { EVENT_TABLE } = require('./evento.model');
 const { ASSISTANT_TABLE } = require('./asistente.model');
 
@@ -42,12 +43,13 @@ const ReservaSchema = {
 };
 
 class Reserva extends Model {
-    static associate(models) {
-      // Verifica que los modelos estén correctamente referenciados
-      this.belongsTo(models.Evento, { foreignKey: 'eventoId', as: 'evento' });
-      this.belongsTo(models.Asistente, { foreignKey: 'asistenteId', as: 'asistente' });
-    }
+  static associate(models) {
+    // Relación con Evento
+    this.belongsTo(models.Event, { foreignKey: 'eventoId', as: 'evento' });
 
+    // Relación con Asistente
+    this.belongsTo(models.Assistant, { foreignKey: 'asistenteId', as: 'asistente' });
+  }
 
   static config(sequelize) {
     return {

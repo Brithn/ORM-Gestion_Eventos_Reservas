@@ -30,7 +30,7 @@ const EventSchema = {
 
 class Event extends Model {
   static associate(models) {
-    // Puedes agregar asociaciones aquí si es necesario en el futuro
+    this.hasMany(models.Reserva, { foreignKey: 'eventoId', as: 'reservas' });
   }
 
   static config(sequelize) {
